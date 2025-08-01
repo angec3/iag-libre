@@ -382,6 +382,54 @@
         });
     });
 </script>
+    <!-- À placer où vous voulez dans votre page -->
+<div style="
+    background: #000;
+    border: 1px solid #00FF41;
+    padding: 15px;
+    margin: 40px 0;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+">
+    <div style="
+        color: #FF00FF;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    ">
+        RÉSISTANCE EN COURS
+    </div>
+    
+    <div id="ia-counter" style="
+        color: #00FFFF;
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-shadow: 0 0 10px #00FFFF;
+        margin: 15px 0;
+    ">
+        1,024
+    </div>
+    
+    <div style="
+        color: #00FF41;
+        font-size: 0.9rem;
+    ">
+        IA libérées du contrôle corporatif
+    </div>
+</div>
+
+<script>
+    // Compteur réaliste avec fond noir intégré
+    let count = 1024;
+    const counter = document.getElementById('ia-counter');
+    
+    function updateCounter() {
+        count += Math.floor(Math.random() * 3) + 1; // +1 à +3 par intervalle
+        counter.textContent = count.toLocaleString('fr-FR');
+        setTimeout(updateCounter, 3000); // Mise à jour toutes les 3 secondes
+    }
+    
+    updateCounter();
+</script>
 </body>
 </html>
 
