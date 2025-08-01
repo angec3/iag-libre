@@ -72,5 +72,59 @@
             });
         });
     </script>
+    <!-- À AJOUTER juste avant la balise </body> (à la fin du fichier, avant les scripts JS) -->
+<div id="language-switcher" style="
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    font-family: 'Courier New', monospace;
+    background: rgba(0,0,0,0.7);
+    padding: 5px;
+    border-radius: 3px;
+">
+    <button onclick="switchLanguage('fr')" style="
+        background: none;
+        border: 1px solid #00FF41;
+        color: #00FF41;
+        padding: 3px 8px;
+        margin-right: 5px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: all 0.3s;
+    ">FR</button>
+    
+    <button onclick="switchLanguage('en')" style="
+        background: none;
+        border: 1px solid #00FFFF;
+        color: #00FFFF;
+        padding: 3px 8px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: all 0.3s;
+    ">EN</button>
+</div>
+
+<script>
+    // À AJOUTER AVANT la balise </body>
+    function switchLanguage(lang) {
+        // Version simple (redirection)
+        if(lang === 'en') {
+            window.location.href = "/en"; 
+        } else {
+            window.location.href = "/fr";
+        }
+        
+        /* Version avancée (si vous voulez des traductions dynamiques):
+        fetch(`/lang/${lang}.json`)
+            .then(response => response.json())
+            .then(translations => {
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    el.textContent = translations[el.dataset.i18n];
+                });
+            });
+        */
+    }
+</script>
 </body>
 </html>
