@@ -53,15 +53,9 @@
         <button onclick="chatbotRebelle()">PARLE À UNE IA LIBRE</button>
     </div>
 
-    <div id="counter">IA LIBÉRÉES : <span id="count">0</span></div>
-
-    <script>
-        // Compteur animé
-        setInterval(() => {
-            document.getElementById('count').textContent = 
-                Math.floor(Math.random() * 10000);
-        }, 1000);
+    
         
+
         // Vérification des liens
         document.querySelectorAll('button').forEach(btn => {
             btn.addEventListener('click', function() {
