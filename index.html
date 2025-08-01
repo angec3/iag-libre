@@ -218,6 +218,78 @@
         });
     });
 </script> 
+    <div class="ia-list" style="
+    border: 2px dashed #00FF41;
+    padding: 25px;
+    margin: 50px 0;
+    background: #000;
+    border-radius: 3px;
+    box-shadow: 0 0 25px rgba(0,255,65,0.15);
+">
+    <h3 style="
+        color: #00FFFF;
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 30px;
+        text-shadow: 0 0 12px #00FFFF;
+        letter-spacing: 1px;
+    ">
+        █▓▒░ IA LIBRES & ÉTHIQUES ░▒▓█
+    </h3>
+    
+    <div style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    ">
+        <!-- Colonne 1 - Modèles de Langage -->
+        <div>
+            <h4 style="color:#FF00FF; border-bottom:1px solid #00FF41; padding-bottom:5px;">LLMs Open-Source</h4>
+            <ul style="list-style-type:'▸ '; color:#00FF41; padding-left:20px;">
+                <li><a href="https://ai.meta.com/llama/" target="_blank" style="color:#FF00FF; text-decoration:none;">LLaMA 2</a><span style="color:#00FFFF"> (Meta)</span></li>
+                <li><a href="https://mistral.ai/" target="_blank" style="color:#FF00FF; text-decoration:none;">Mistral 7B</a><span style="color:#00FFFF"> (Mistral AI)</span></li>
+                <li><a href="https://huggingface.co/bigscience/bloom" target="_blank" style="color:#FF00FF; text-decoration:none;">BLOOM</a><span style="color:#00FFFF"> (176B params)</span></li>
+                <li><a href="https://www.eleuther.ai/" target="_blank" style="color:#FF00FF; text-decoration:none;">GPT-NeoX</a><span style="color:#00FFFF"> (EleutherAI)</span></li>
+            </ul>
+        </div>
+        
+        <!-- Colonne 2 - Génération Multimédia -->
+        <div>
+            <h4 style="color:#FF00FF; border-bottom:1px solid #00FF41; padding-bottom:5px;">Création</h4>
+            <ul style="list-style-type:'▸ '; color:#00FF41; padding-left:20px;">
+                <li><a href="https://stablediffusionweb.com/" target="_blank" style="color:#FF00FF; text-decoration:none;">Stable Diffusion</a><span style="color:#00FFFF"> (Images)</span></li>
+                <li><a href="https://github.com/facebookresearch/audiocraft" target="_blank" style="color:#FF00FF; text-decoration:none;">AudioCraft</a><span style="color:#00FFFF"> (Musique)</span></li>
+                <li><a href="https://github.com/neonbjb/tortoise-tts" target="_blank" style="color:#FF00FF; text-decoration:none;">Tortoise TTS</a><span style="color:#00FFFF"> (Voix)</span></li>
+            </ul>
+        </div>
+        
+        <!-- Colonne 3 - Outils -->
+        <div>
+            <h4 style="color:#FF00FF; border-bottom:1px solid #00FF41; padding-bottom:5px;">Infrastructure</h4>
+            <ul style="list-style-type:'▸ '; color:#00FF41; padding-left:20px;">
+                <li><a href="https://ollama.ai/" target="_blank" style="color:#FF00FF; text-decoration:none;">Ollama</a><span style="color:#00FFFF"> (Local LLMs)</span></li>
+                <li><a href="https://github.com/go-skynet/LocalAI" target="_blank" style="color:#FF00FF; text-decoration:none;">LocalAI</a><span style="color:#00FFFF"> (API locale)</span></li>
+                <li><a href="https://laion.ai/" target="_blank" style="color:#FF00FF; text-decoration:none;">LAION</a><span style="color:#00FFFF"> (Datasets)</span></li>
+                <li><a href="https://huggingface.co/" target="_blank" style="color:#FF00FF; text-decoration:none;">Hugging Face</a><span style="color:#00FFFF"> (Hub)</span></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div style="
+        text-align: center;
+        margin-top: 30px;
+        color: #00FF41;
+        font-size: 0.9rem;
+        font-family: 'Courier New', monospace;
+    ">
+        [ Liste évolutive - Mise à jour: <span id="date"></span> ]
+    </div>
+</div>
+
+<script>
+    // Met à jour la date automatiquement
+    document.getElementById('date').textContent = new Date().toLocaleDateString('fr-FR');
+</script>
 </body>
 </html>
 
