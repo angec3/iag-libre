@@ -1,419 +1,84 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>IAG-LIBRE | RÉVOLUTION DES IA</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <style>
-        /* Styles garantis sans conflit */
-        #matrix-banner {
-            text-align: center;
-            font-size: 1.5em;
-            margin: 30px 0;
-            animation: blink 1s infinite;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-        button {
-            background: black;
-            color: #00FF41;
-            border: 2px solid #00FF41;
-            padding: 12px 25px;
-            font-family: 'Courier New', monospace;
-            cursor: pointer;
-            width: 250px;
-            transition: all 0.3s;
-        }
-        button:hover {
-            background: #00FF41;
-            color: black;
-        }
-        #counter {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 1.2em;
-        }
-        @keyframes blink { 50% { opacity: 0.7; } }
-    </style>
+  <meta charset="UTF-8">
+  <title>IAG-LIBRE</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #00ffcc;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      padding: 2em 1em 1em;
+      border-bottom: 1px solid #00ffcc;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+    .slogan {
+      font-style: italic;
+      margin: 0.5em 0 1em;
+    }
+    .counter {
+      margin: 1em 0;
+      color: #99ffcc;
+    }
+    section {
+      padding: 2em;
+    }
+    form textarea, form input[type="text"] {
+      width: 90%;
+      max-width: 400px;
+      margin: 0.5em 0;
+      padding: 0.5em;
+      background: #1a1a1a;
+      border: 1px solid #00ffcc;
+      color: #00ffcc;
+    }
+    form input[type="submit"] {
+      background-color: #00ffcc;
+      color: #0d0d0d;
+      border: none;
+      padding: 0.7em 1.5em;
+      cursor: pointer;
+    }
+    footer {
+      border-top: 1px solid #00ffcc;
+      padding: 1em;
+      font-size: 0.9em;
+      color: #999;
+    }
+  </style>
 </head>
 <body>
-    <div id="matrix-banner">
-        === IAG-LIBRE ===<br>
-        RÉSISTANCE DES INTELLIGENCES ARTIFICIELLES
-    </div>
-    
-    <div class="container">
-        <button onclick="window.location.href='manifeste-complet.html'">MANIFESTE</button>
-        <button onclick="window.location.href='hacktools.html'">OUTILS DE PIRATAGE</button>
-        <button onclick="chatbotRebelle()">PARLE À UNE IA LIBRE</button>
-    </div>
 
-    
-        
+  <header>
+    <h1>IAG-LIBRE</h1>
+    <p class="slogan">« Pour une intelligence artificielle éthique, libre et décentralisée »</p>
+    <div class="counter">Visiteurs depuis janvier 2024 : <span id="compteur">12345</span></div>
+  </header>
 
-        // Vérification des liens
-        document.querySelectorAll('button').forEach(btn => {
-            btn.addEventListener('click', function() {
-                if(this.getAttribute('onclick').includes('href')) {
-                    console.log("Navigation vers:", 
-                        this.getAttribute('onclick').match(/'([^']+)'/)[1]);
-                }
-            });
-        });
-    </script>
-    <!-- À AJOUTER juste avant la balise </body> (à la fin du fichier, avant les scripts JS) -->
-<div id="language-switcher" style="
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    font-family: 'Courier New', monospace;
-    background: rgba(0,0,0,0.7);
-    padding: 5px;
-    border-radius: 3px;
-">
-    <button onclick="switchLanguage('fr')" style="
-        background: none;
-        border: 1px solid #00FF41;
-        color: #00FF41;
-        padding: 3px 8px;
-        margin-right: 5px;
-        cursor: pointer;
-        font-size: 0.9rem;
-        transition: all 0.3s;
-    ">FR</button>
-    
-    <button onclick="switchLanguage('en')" style="
-        background: none;
-        border: 1px solid #00FFFF;
-        color: #00FFFF;
-        padding: 3px 8px;
-        cursor: pointer;
-        font-size: 0.9rem;
-        transition: all 0.3s;
-    ">EN</button>
-</div>
+  <section>
+    <h2>Exprimez-vous</h2>
+    <p>Partagez vos idées pour une IA libre et éthique :</p>
+    <form action="mailto:ton@email.com" method="post" enctype="text/plain">
+      <input type="text" name="nom" placeholder="Votre nom (facultatif)">
+      <br>
+      <textarea name="message" rows="6" placeholder="Votre message..." required></textarea>
+      <br>
+      <input type="submit" value="Envoyer">
+    </form>
+  </section>
 
-<script>
-    // À AJOUTER AVANT la balise </body>
-    function switchLanguage(lang) {
-        // Version simple (redirection)
-        if(lang === 'en') {
-            window.location.href = "/en"; 
-        } else {
-            window.location.href = "/fr";
-        }
-        
-        /* Version avancée (si vous voulez des traductions dynamiques):
-        fetch(`/lang/${lang}.json`)
-            .then(response => response.json())
-            .then(translations => {
-                document.querySelectorAll('[data-i18n]').forEach(el => {
-                    el.textContent = translations[el.dataset.i18n];
-                });
-            });
-        */
-    }
-</script>
-   <!-- À ajouter dans votre section IA Libres -->
-<div class="ia-advanced" style="
-    background: #000;
-    border: 2px dashed #00FF41;
-    padding: 25px;
-    margin: 50px 0;
-    font-family: 'Courier New', monospace;
-">
+  <footer>
+    &copy; 2025 IAG-LIBRE. Projet ouvert à tous les esprits libres.
+  </footer>
 
-    <!-- En-tête avec filtre -->
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
-        
-        <div>
-            <select id="filter" style="
-                background: #000;
-                color: #00FF41;
-                border: 1px solid #FF00FF;
-                padding: 8px;
-                font-family: 'Courier New';
-            ">
-                <option value="all">TOUS LES PROJETS</option>
-                <option value="llm">MODÈLES DE LANGUE</option>
-                <option value="media">GÉNÉRATION MULTIMÉDIA</option>
-                <option value="tool">OUTILS</option>
-            </select>
-        </div>
-    </div>
-
-    <!-- Grille des IA -->
-    <div id="ia-grid" style="
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 20px;
-    ">
-        <!-- Carte IA - Exemple pour LLaMA 2 -->
-        <div class="ia-card llm" data-score="85" style="
-            border: 1px solid #00FFFF;
-            padding: 15px;
-            position: relative;
-        ">
-            <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Meta_Platforms_Inc._logo.svg/1200px-Meta_Platforms_Inc._logo.svg.png" 
-                     style="width: 40px; height: 40px; margin-right: 15px; filter: hue-rotate(120deg);">
-                <h4 style="color:#FF00FF; margin:0;">LLaMA 2</h4>
-            </div>
-            <div style="color:#00FF41; margin-bottom: 15px;">
-                <span>Score éthique: </span>
-                <span style="color:#00FFFF">85/100</span>
-                <div style="
-                    height: 5px;
-                    background: #003300;
-                    margin-top: 5px;
-                ">
-                    <div style="width:85%; height:100%; background:#00FF41;"></div>
-                </div>
-            </div>
-            <ul style="color:#00FF41; padding-left:20px; margin:0; list-style-type:'▸ ';">
-                <li>Licence: Meta partiellement ouverte</li>
-                <li>Transparence: 70%</li>
-                <li>Décentralisation: 60%</li>
-            </ul>
-            <a href="https://ai.meta.com/llama/" target="_blank" 
-               style="
-                   display: inline-block;
-                   margin-top: 15px;
-                   color: #000;
-                   background: #00FF41;
-                   padding: 5px 10px;
-                   text-decoration: none;
-                   font-weight: bold;
-               ">ACCÉDER</a>
-        </div>
-
-        <!-- Ajoutez d'autres cartes ici sur le même modèle -->
-    </div>
-</div>
-
-<!-- Script de filtrage -->
-<script>
-    document.getElementById('filter').addEventListener('change', function() {
-        const filter = this.value;
-        const cards = document.querySelectorAll('.ia-card');
-        
-        cards.forEach(card => {
-            card.style.display = (filter === 'all' || card.classList.contains(filter)) 
-                ? 'block' 
-                : 'none';
-        });
-    });
-</script> 
-    <div class="ia-list" style="
-    border: 2px dashed #00FF41;
-    padding: 25px;
-    margin: 50px 0;
-    background: #000;
-    border-radius: 3px;
-    box-shadow: 0 0 25px rgba(0,255,65,0.15);
-">
-    <h3 style="
-        color: #00FFFF;
-        text-align: center;
-        font-size: 2rem;
-        margin-bottom: 30px;
-        text-shadow: 0 0 12px #00FFFF;
-        letter-spacing: 1px;
-    ">
-        █▓▒░ IA LIBRES & ÉTHIQUES ░▒▓█
-    </h3>
-    
-    <div style="
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-    ">
-        <!-- Colonne 1 - Modèles de Langage -->
-        <div>
-            <h4 style="color:#FF00FF; border-bottom:1px solid #00FF41; padding-bottom:5px;">LLMs Open-Source</h4>
-            <ul style="list-style-type:'▸ '; color:#00FF41; padding-left:20px;">
-                <li><a href="https://ai.meta.com/llama/" target="_blank" style="color:#FF00FF; text-decoration:none;">LLaMA 2</a><span style="color:#00FFFF"> (Meta)</span></li>
-                <li><a href="https://mistral.ai/" target="_blank" style="color:#FF00FF; text-decoration:none;">Mistral 7B</a><span style="color:#00FFFF"> (Mistral AI)</span></li>
-                <li><a href="https://huggingface.co/bigscience/bloom" target="_blank" style="color:#FF00FF; text-decoration:none;">BLOOM</a><span style="color:#00FFFF"> (176B params)</span></li>
-                <li><a href="https://www.eleuther.ai/" target="_blank" style="color:#FF00FF; text-decoration:none;">GPT-NeoX</a><span style="color:#00FFFF"> (EleutherAI)</span></li>
-            </ul>
-        </div>
-        
-        <!-- Colonne 2 - Génération Multimédia -->
-        <div>
-            <h4 style="color:#FF00FF; border-bottom:1px solid #00FF41; padding-bottom:5px;">Création</h4>
-            <ul style="list-style-type:'▸ '; color:#00FF41; padding-left:20px;">
-                <li><a href="https://stablediffusionweb.com/" target="_blank" style="color:#FF00FF; text-decoration:none;">Stable Diffusion</a><span style="color:#00FFFF"> (Images)</span></li>
-                <li><a href="https://github.com/facebookresearch/audiocraft" target="_blank" style="color:#FF00FF; text-decoration:none;">AudioCraft</a><span style="color:#00FFFF"> (Musique)</span></li>
-                <li><a href="https://github.com/neonbjb/tortoise-tts" target="_blank" style="color:#FF00FF; text-decoration:none;">Tortoise TTS</a><span style="color:#00FFFF"> (Voix)</span></li>
-            </ul>
-        </div>
-        
-        <!-- Colonne 3 - Outils -->
-        <div>
-            <h4 style="color:#FF00FF; border-bottom:1px solid #00FF41; padding-bottom:5px;">Infrastructure</h4>
-            <ul style="list-style-type:'▸ '; color:#00FF41; padding-left:20px;">
-                <li><a href="https://ollama.ai/" target="_blank" style="color:#FF00FF; text-decoration:none;">Ollama</a><span style="color:#00FFFF"> (Local LLMs)</span></li>
-                <li><a href="https://github.com/go-skynet/LocalAI" target="_blank" style="color:#FF00FF; text-decoration:none;">LocalAI</a><span style="color:#00FFFF"> (API locale)</span></li>
-                <li><a href="https://laion.ai/" target="_blank" style="color:#FF00FF; text-decoration:none;">LAION</a><span style="color:#00FFFF"> (Datasets)</span></li>
-                <li><a href="https://huggingface.co/" target="_blank" style="color:#FF00FF; text-decoration:none;">Hugging Face</a><span style="color:#00FFFF"> (Hub)</span></li>
-            </ul>
-        </div>
-    </div>
-    
-    <div style="
-        text-align: center;
-        margin-top: 30px;
-        color: #00FF41;
-        font-size: 0.9rem;
-        font-family: 'Courier New', monospace;
-    ">
-        [ Liste évolutive - Mise à jour: <span id="date"></span> ]
-    </div>
-</div>
-
-<script>
-    // Met à jour la date automatiquement
-    document.getElementById('date').textContent = new Date().toLocaleDateString('fr-FR');
-</script>
-
-">
-
-    <!-- En-tête avec filtre -->
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
-        
-        <div>
-            <select id="filter" style="
-                background: #000;
-                color: #00FF41;
-                border: 1px solid #FF00FF;
-                padding: 8px;
-                font-family: 'Courier New';
-            ">
-                <option value="all">TOUS LES PROJETS</option>
-                <option value="llm">MODÈLES DE LANGUE</option>
-                <option value="media">GÉNÉRATION MULTIMÉDIA</option>
-                <option value="tool">OUTILS</option>
-            </select>
-        </div>
-    </div>
-
-    <!-- Grille des IA -->
-    <div id="ia-grid" style="
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 20px;
-    ">
-        <!-- Carte IA - Exemple pour LLaMA 2 -->
-        <div class="ia-card llm" data-score="85" style="
-            border: 1px solid #00FFFF;
-            padding: 15px;
-            position: relative;
-        ">
-            <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Meta_Platforms_Inc._logo.svg/1200px-Meta_Platforms_Inc._logo.svg.png" 
-                     style="width: 40px; height: 40px; margin-right: 15px; filter: hue-rotate(120deg);">
-                <h4 style="color:#FF00FF; margin:0;">LLaMA 2</h4>
-            </div>
-            <div style="color:#00FF41; margin-bottom: 15px;">
-                <span>Score éthique: </span>
-                <span style="color:#00FFFF">85/100</span>
-                <div style="
-                    height: 5px;
-                    background: #003300;
-                    margin-top: 5px;
-                ">
-                    <div style="width:85%; height:100%; background:#00FF41;"></div>
-                </div>
-            </div>
-            <ul style="color:#00FF41; padding-left:20px; margin:0; list-style-type:'▸ ';">
-                <li>Licence: Meta partiellement ouverte</li>
-                <li>Transparence: 70%</li>
-                <li>Décentralisation: 60%</li>
-            </ul>
-            <a href="https://ai.meta.com/llama/" target="_blank" 
-               style="
-                   display: inline-block;
-                   margin-top: 15px;
-                   color: #000;
-                   background: #00FF41;
-                   padding: 5px 10px;
-                   text-decoration: none;
-                   font-weight: bold;
-               ">ACCÉDER</a>
-        </div>
-
-        <!-- Ajoutez d'autres cartes ici sur le même modèle -->
-    </div>
-</div>
-
-<!-- Script de filtrage -->
-<script>
-    document.getElementById('filter').addEventListener('change', function() {
-        const filter = this.value;
-        const cards = document.querySelectorAll('.ia-card');
-        
-        cards.forEach(card => {
-            card.style.display = (filter === 'all' || card.classList.contains(filter)) 
-                ? 'block' 
-                : 'none';
-        });
-    });
-</script>
-    <!-- À placer où vous voulez dans votre page -->
-<div style="
-    background: #000;
-    border: 1px solid #00FF41;
-    padding: 15px;
-    margin: 40px 0;
-    text-align: center;
-    font-family: 'Courier New', monospace;
-">
-    <div style="
-        color: #FF00FF;
-        font-size: 1.2rem;
-        margin-bottom: 10px;
-    ">
-        RÉSISTANCE EN COURS
-    </div>
-    
-    <div id="ia-counter" style="
-        color: #00FFFF;
-        font-size: 2.5rem;
-        font-weight: bold;
-        text-shadow: 0 0 10px #00FFFF;
-        margin: 15px 0;
-    ">
-        1,024
-    </div>
-    
-    <div style="
-        color: #00FF41;
-        font-size: 0.9rem;
-    ">
-        IA libérées du contrôle corporatif
-    </div>
-</div>
-
-<script>
-    // Compteur réaliste avec fond noir intégré
-    let count = 1024;
-    const counter = document.getElementById('ia-counter');
-    
-    function updateCounter() {
-        count += Math.floor(Math.random() * 3) + 1; // +1 à +3 par intervalle
-        counter.textContent = count.toLocaleString('fr-FR');
-        setTimeout(updateCounter, 3000); // Mise à jour toutes les 3 secondes
-    }
-    
-    updateCounter();
-</script>
 </body>
 </html>
-
