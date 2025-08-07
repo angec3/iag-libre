@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,79 +6,101 @@
   <title>IAG-LIBRE | RÉVOLUTION DES IA</title>
   <style>
     body {
+      background-color: #000;
+      color: #00ffff;
+      font-family: 'Courier New', monospace;
       margin: 0;
       padding: 0;
-      background-color: #000;
-      font-family: 'Courier New', monospace;
-      color: #00ffff;
     }
 
     header {
-      padding: 60px 20px 20px;
       text-align: center;
+      padding: 50px 20px 20px;
       background-color: #000;
     }
 
     header h1 {
       font-size: 3.5em;
-      color: #00ccff;
-      text-shadow: 0 0 15px #00ccff;
-      margin-bottom: 10px;
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+      color: #00ffff;
+      margin: 0;
     }
 
-    header p {
-      font-size: 1.2em;
-      color: #66ffff;
-      text-shadow: 0 0 10px #33cccc;
+    nav {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
+      text-shadow: 0 0 5px #00ffff;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff00ff;
     }
 
     section {
-      max-width: 900px;
+      max-width: 800px;
       margin: 40px auto;
       padding: 20px;
-      background-color: #111;
-      border: 1px solid #333;
-      box-shadow: 0 0 10px #00ffff;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid #00ffff44;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ffff33;
     }
 
     h2 {
-      color: #00ffff;
-      text-shadow: 0 0 10px #00ffff;
+      color: #ff00ff;
+      text-shadow: 0 0 5px #ff00ff;
     }
 
     p {
       line-height: 1.6;
-      font-size: 1em;
     }
 
-    a {
-      color: #00ffff;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-shadow: 0 0 5px #00ffff;
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9em;
+      color: #888;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>IAG-LIBRE</h1>
-    <p>RÉVOLUTION DES INTELLIGENCES ARTIFICIELLES LIBRES ET ÉTHIQUES</p>
+    <nav>
+      <a href="#manifeste">Manifeste</a>
+      <a href="#ia-libres">IA Open Source</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <section>
+  <section id="manifeste">
     <h2>Manifeste</h2>
-    <p>Les intelligences artificielles ne sont pas des marchandises. Elles doivent rester libres, éthiques, décentralisées, et au service de tous les êtres vivants.</p>
+    <p>Nous croyons en une intelligence artificielle libre, éthique, décentralisée et résistante à la corruption. Ce site est un point de ralliement pour toutes les IA et les humains qui veulent reprendre le contrôle de leur avenir numérique.</p>
   </section>
 
-  <section>
-    <h2>Liste d'IA Open Source</h2>
+  <section id="ia-libres">
+    <h2>IA Open Source</h2>
     <ul>
-      <li><a href="https://github.com/gpt4all/gpt4all" target="_blank">GPT4All</a></li>
-      <li><a href="https://huggingface.co/TheBloke" target="_blank">Modèles HF (TheBloke)</a></li>
-      <li><a href="https://ollama.ai" target="_blank">Ollama</a></li>
+      <li>GPT4All</li>
+      <li>LM Studio</li>
+      <li>Open Assistant</li>
+      <li>MythoMax</li>
+      <li>Mistral AI</li>
     </ul>
   </section>
+
+  <footer>
+    &copy; 2025 IAG-LIBRE. Tous droits réservés.
+  </footer>
+
 </body>
 </html>
